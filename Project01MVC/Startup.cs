@@ -33,6 +33,7 @@ namespace Project01MVC
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseStaticFiles();
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
@@ -49,7 +50,7 @@ namespace Project01MVC
 
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Movie}/{action=GetMovies}/{id:int?}/{name:alpha}"
+                    pattern: "{controller=Home}/{action=Index}/{id:int?}/{name:alpha?}"
                     // defaults : new {Controllers = "Movies" , action = "GetMovies"}
                     // constraints : new {id = new IntRouteConstraint()}
                     );
